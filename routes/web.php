@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/stock', function () {
+    return view('stock');
+});
+
+
+Route::get('stock/add', 'StockController@create');
+Route::post('stock/add', 'StockController@store');
+
+Route::get('stocks', 'StockController@index');
+

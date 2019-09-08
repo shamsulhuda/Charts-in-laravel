@@ -15,12 +15,13 @@
     <body>
     <div class="container">
       <div class="row">
-       <div class="col-md-10 col-md-offset-1">
+       <div class="col-md-10 offset-1 mt-4">
            <div class="card card-default">
-               <div class="panel-heading text-center"><b>Charts</b></div>
-               <div>
-               <a href="{{url('stock')}}" class="btn btn-primary btn-sm">Add Data</a>
-               </div>
+               <div class="card-heading">
+                   <h2 class="text-center text-primary">Chart View Analysis</h2>
+                   <a href="{{url('stock')}}" class="btn btn-primary btn-sm ml-2">Add Data</a>
+                </div>
+               
                <div class="card-body">
                    <canvas id="canvas" height="280" width="600"></canvas>
                </div>

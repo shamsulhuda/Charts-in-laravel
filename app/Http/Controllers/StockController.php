@@ -22,9 +22,8 @@ class StockController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(){
+        return view('Stock');
     }
 
     /**
@@ -36,14 +35,24 @@ class StockController extends Controller
     public function store(Request $request)
     {
         $stock = new Stock([
-            'stockName' => $request->get('stockName'),
-            'stockPrice' => $request->get('stockPrice'),
-            'stockYear' => $request->get('stockYear')
+          'stockName' => $request->get('stockName'),
+          'stockPrice' => $request->get('stockPrice'),
+          'stockYear' => $request->get('stockYear'),
         ]);
         $stock->save();
 
         return redirect('stocks');
     }
+
+    /**
+     * Fetch the particular company details
+     * @return json response
+     */
+      public function chart()
+      {
+        $result = \DB::table('stocks')->get();
+        return Response()->json($result);
+      }
 
     /**
      * Display the specified resource.

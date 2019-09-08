@@ -9,48 +9,40 @@
 
         <!-- Fonts -->
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
-
-        
-
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-
-        
-        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/css/bootstrap-select.min.css"> --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/css/bootstrap-select.min.css">
     </head>
     <body>
         <div class="container">
-          <br />
-          <form action="{{url('stock/add')}}" method="post">
-            {{csrf_field()}}
-            <div class="form-group">
-               <label for="stockName">Stock Name:</label>
-               <input type="text" class="form-control" id="stockName" name="stockName">
-             </div>
-             <div class="form-group">
-               <label for="stockPrice">Stock Price:</label>
-               <input type="text" class="form-control" id="stockPrice" name="stockPrice">
-             </div>
-            <div class="form-group">
-              <label for="stockPrice">Select Year:</label>
-              <select class="selectPicker" id="stockPrice" name="stockYear">
-                <option value="1991">1991</option>
-                <option value="1992">1992</option>
-                <option value="1993">1993</option>
-                <option value="1994">1994</option>
-                <option value="1995">1995</option>
-                <option value="1996">1996</option>
-              </select>
-            </div>
-             <button type="submit" class="btn btn-primary">Submit</button>
-          <a href="{{url('stocks')}}" class="btn btn-primary">Back to list</a>
-          </form>
+          <h2 class="text-center">Input Stock</h2>
+          <div class="col-md-6 offset-3">
+            <form action="{{url('stock/add')}}" method="post">
+              @csrf
+              <div class="form-group">
+                 <label for="stockName">Stock Name:</label>
+                 <input type="text" class="form-control" id="stockName" name="stockName">
+               </div>
+               <div class="form-group">
+                 <label for="stockPrice">Stock Price:</label>
+                 <input type="text" class="form-control" id="stockPrice" name="stockPrice">
+               </div>
+              <div class="form-group">
+                <label for="stockPrice">Select Year:</label>
+                <select class="selectPicker" id="stockPrice" name="stockYear">
+                  <option value="1991">1991</option>
+                  <option value="1992">1992</option>
+                  <option value="1993">1993</option>
+                  <option value="1994">1994</option>
+                  <option value="1995">1995</option>
+                  <option value="1996">1996</option>
+                </select>
+              </div>
+              <a href="{{url('stocks')}}" class="btn btn-secondary float-right">Back to Chart</a>
+               <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
         </div>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-
-        {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/js/bootstrap-select.min.js" charset="utf-8"></script> --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/js/bootstrap-select.min.js" charset="utf-8"></script>
     </body>
 </html>

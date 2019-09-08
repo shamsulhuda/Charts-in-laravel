@@ -9,36 +9,29 @@
 
         <!-- Fonts -->
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
-        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/css/bootstrap-select.min.css"> --}}
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/css/bootstrap-select.min.css">
     
     </head>
     <body>
     <div class="container">
       <div class="row">
        <div class="col-md-10 col-md-offset-1">
-           <div class="panel panel-default">
-               <div class="panel-heading"><b>Charts</b></div>
+           <div class="card card-default">
+               <div class="panel-heading text-center"><b>Charts</b></div>
                <div>
                <a href="{{url('stock')}}" class="btn btn-primary btn-sm">Add Data</a>
                </div>
-               <div class="panel-body">
+               <div class="card-body">
                    <canvas id="canvas" height="280" width="600"></canvas>
                </div>
            </div>
        </div>
      </div>
     </div>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-
-        {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/js/bootstrap-select.min.js" charset="utf-8"></script> --}}
-        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js" charset="utf-8"></script> --}}
-        {{-- <script src="https://jsonplaceholder.typicode.com/posts/" charset="utf-8"></script> --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.3/js/bootstrap-select.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js" charset="utf-8"></script>
         
         <script>
         var url = "{{url('stock/chart')}}";
@@ -54,11 +47,11 @@
             });
             var ctx = document.getElementById("canvas").getContext('2d');
                 var myChart = new Chart(ctx, {
-                  type: 'bar',
+                  type: 'line',
                   data: {
                       labels:Years,
                       datasets: [{
-                          label: 'Infosys Price',
+                          label: 'Info Price',
                           data: Prices,
                           borderWidth: 1
                       }]

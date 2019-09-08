@@ -48,7 +48,7 @@
             });
             var ctx = document.getElementById("canvas").getContext('2d');
                 var myChart = new Chart(ctx, {
-                  type: 'line',
+                  type: 'bar',
                   data: {
                       labels:Years,
                       datasets: [{
